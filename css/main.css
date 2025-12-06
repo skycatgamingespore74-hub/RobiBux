@@ -26,3 +26,8 @@
           .partner-card{background:linear-gradient(135deg,#ff4d6d,#6a11cb);border-radius:10px;padding:12px;text-align:center;color:#fff}
           .muted{color:var(--muted)}
           .small{font-size:13px}
+          .nav{display:flex;gap:16px;padding:12px 20px;background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.05)}
+          .nav-link{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;transition:all 0.2s}
+          .nav-link:hover{background:rgba(255,255,255,0.1);color:var(--accent)}
+          .profile-area{display:flex;align-items:center;gap:16px}
+          .profile-mini{display:flex;align-items:center;gap:8px}

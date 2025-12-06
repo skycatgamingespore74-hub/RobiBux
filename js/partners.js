@@ -1,7 +1,7 @@
 // partners.js - crée des cartes partenaires simples
 (function(){
   const partners = [
-      { id: 'bitlab', name: 'BitLab', logo: 'assets/images/bitlab-logo.png', url: 'partner-bitlab.html', desc: 'Sondages & offres' },
+      { id: 'bitlab', name: 'BitLab', logo: 'asset/image/bitlab-logo.png', url: 'partner-bitlab.html', desc: 'Sondages & offres' },
           // ajoute d'autres partenaires ici
             ];
 

@@ -2,6 +2,11 @@
 // CHANGE cette URL par l'URL de ton Worker (après déploiement)
 const WORKER_URL = 'https://TON_WORKER_SUBDOMAIN.workers.dev';
 
+// Vérifier que l'URL est configurée
+if(WORKER_URL.includes('TON_WORKER_SUBDOMAIN')){
+  console.warn('ATTENTION: WORKER_URL n\'est pas configurée. Remplace TON_WORKER_SUBDOMAIN par l\'URL réelle de ton Cloudflare Worker.');
+}
+
 document.getElementById('openBitlab')?.addEventListener('click', async ()=> {
   const msg = document.getElementById('bitlabMsg');
     msg.textContent = 'Préparation de BitLab…';

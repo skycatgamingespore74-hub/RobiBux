@@ -38,7 +38,7 @@
                                                                                                     document.getElementById('profileId')?.innerText = id || '—';
                                                                                                         // avatar placeholder (on peut remplacer par thumbnails API si veut)
                                                                                                             document.querySelectorAll('#headerAvatar,#headerAvatar2,#profileAvatar').forEach(img=>{
-                                                                                                                  if(img) img.src = 'assets/images/default-avatar.png';
+                                                                                                                  if(img) img.src = 'asset/image/default-avatar.png';
                                                                                                                       });
                                                                                                                         });
                                                                                                                         })();
