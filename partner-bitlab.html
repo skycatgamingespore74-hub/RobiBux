@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MoonRewards — BitLab</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">MoonRewards</div>
+    <a href="partners.html" class="btn small">Retour partenaires</a>
+    </header>
+
+    <main class="container">
+      <h2>BitLab — quêtes et sondages</h2>
+
+        <section class="card">
+            <p>Intégration sécurisée via proxy (Cloudflare Worker). Clique sur <strong>Lancer BitLab</strong> pour ouvrir l'offre.</p>
+                <button id="openBitlab" class="btn primary">Lancer BitLab</button>
+                    <p id="bitlabMsg" class="muted small"></p>
+                      </section>
+
+                        <section class="card">
+                            <h3>Mur d'offres BitLab</h3>
+                                <!-- iframe pour l'offerwall (s'il autorise l'iframe). Sinon ouvrir via fenêtre -->
+                                    <iframe id="bitlabFrame" src="" style="width:100%;height:600px;border:1px solid #333;display:none;"></iframe>
+                                      </section>
+                                      </main>
+
+                                      <script src="js/bitlab.js"></script>
+                                      <script src="js/auth.js"></script>
+                                      </body>
+                                      </html>

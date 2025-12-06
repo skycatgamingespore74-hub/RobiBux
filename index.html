@@ -1,98 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>RobiBux</title>
-        <style>
-            body { font-family: 'Arial', sans-serif; background: linear-gradient(#1a1a2e, #162447); color: #fff; text-align: center; margin: 0; }
-                header { background: #1f4068; padding: 20px; }
-                    header h1 { margin: 0; font-size: 2.5em; color: #e43f5a; text-shadow: 2px 2px #000; }
-                        main { padding: 20px; }
-                            input, button { padding: 10px; margin: 10px; border-radius: 5px; border: none; font-size: 1em; }
-                                button { background: #e43f5a; color: #fff; cursor: pointer; transition: 0.3s; }
-                                    button:hover { background: #ff6b81; }
-                                        .avatar { width: 150px; height: 150px; border-radius: 50%; margin-top: 20px; }
-                                            .balance { font-size: 1.5em; margin: 20px; }
-                                              </style>
-                                              </head>
-                                              <body>
-                                                <header>
-                                                    <h1>RobiBux</h1>
-                                                      </header>
-                                                        <main>
-                                                            <h2>Écris ton identifiant Roblox</h2>
-                                                                <input type="text" id="username" placeholder="Pseudo Roblox">
-                                                                    <button onclick="saveUser()">Valider</button>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MoonRewards — Connexion</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">MoonRewards</div>
+  </header>
 
-                                                                        <div id="userSection" style="display:none;">
-                                                                              <img id="avatar" class="avatar" src="" alt="Avatar Roblox">
-                                                                                    <div class="balance">Robux: <span id="robux">0</span></div>
+  <main class="container center">
+    <h1>Gagne des points — connecte-toi</h1>
+      <p>Entre ton <strong>ID Roblox</strong> pour commencer.</p>
+        <button id="openLogin" class="btn">Se connecter (ID)</button>
 
-                                                                                          <button onclick="addRobux()">Ajouter Robux (BitLabs)</button>
-                                                                                                <button onclick="withdraw()">Retirer</button>
-                                                                                                    </div>
-                                                                                                      </main>
+          <div id="loginModal" class="modal hidden">
+              <div class="modal-card">
+                    <h3>Connexion — Entre ton ID Roblox</h3>
+                          <input id="robloxId" placeholder="Ex : 12345678" />
+                                <div class="row">
+                                        <button id="loginBtn" class="btn primary">Valider</button>
+                                                <button id="closeLogin" class="btn">Annuler</button>
+                                                      </div>
+                                                            <p class="muted">Ton ID est stocké localement (localStorage).</p>
+                                                                </div>
+                                                                  </div>
 
-                                                                                                        <script>
-                                                                                                            let currentUser = '';
+                                                                    <p class="muted small">Tu peux visiter la page Partenaires pour lancer des quêtes.</p>
+                                                                      <a href="partners.html" class="link">Voir les partenaires →</a>
+                                                                      </main>
 
-                                                                                                                function saveUser() {
-                                                                                                                      const username = document.getElementById('username').value;
-                                                                                                                            if (!username) return alert('Écris ton identifiant Roblox !');
-                                                                                                                                  currentUser = username;
-
-                                                                                                                                        fetch('/user', {
-                                                                                                                                                method: 'POST',
-                                                                                                                                                        headers: { 'Content-Type': 'application/json' },
-                                                                                                                                                                body: JSON.stringify({ robloxUsername: username })
-                                                                                                                                                                      })
-                                                                                                                                                                            .then(res => res.json())
-                                                                                                                                                                                  .then(data => {
-                                                                                                                                                                                          if (data.success) {
-                                                                                                                                                                                                    document.getElementById('avatar').src = data.avatar;
-                                                                                                                                                                                                              document.getElementById('robux').innerText = data.robux;
-                                                                                                                                                                                                                        document.getElementById('userSection').style.display = 'block';
-                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                          alert('Erreur: ' + data.error);
-                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                        });
-                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                function addRobux() {
-                                                                                                                                                                                                                                                                      const amount = Math.floor(Math.random() * 50) + 1; // Simulation BitLabs
-                                                                                                                                                                                                                                                                            fetch('/add-robux', {
-                                                                                                                                                                                                                                                                                    method: 'POST',
-                                                                                                                                                                                                                                                                                            headers: { 'Content-Type': 'application/json' },
-                                                                                                                                                                                                                                                                                                    body: JSON.stringify({ robloxUsername: currentUser, amount })
-                                                                                                                                                                                                                                                                                                          })
-                                                                                                                                                                                                                                                                                                                .then(res => res.json())
-                                                                                                                                                                                                                                                                                                                      .then(data => {
-                                                                                                                                                                                                                                                                                                                              if (data.success) {
-                                                                                                                                                                                                                                                                                                                                        document.getElementById('robux').innerText = data.robux;
-                                                                                                                                                                                                                                                                                                                                                  alert(`Tu as gagné ${amount} Robux !`);
-                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                });
-                                                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                                                        function withdraw() {
-                                                                                                                                                                                                                                                                                                                                                                              const amount = parseInt(prompt('Combien de Robux veux-tu retirer ?'));
-                                                                                                                                                                                                                                                                                                                                                                                    if (!amount) return;
-                                                                                                                                                                                                                                                                                                                                                                                          fetch('/withdraw', {
-                                                                                                                                                                                                                                                                                                                                                                                                  method: 'POST',
-                                                                                                                                                                                                                                                                                                                                                                                                          headers: { 'Content-Type': 'application/json' },
-                                                                                                                                                                                                                                                                                                                                                                                                                  body: JSON.stringify({ robloxUsername: currentUser, amount })
-                                                                                                                                                                                                                                                                                                                                                                                                                        })
-                                                                                                                                                                                                                                                                                                                                                                                                                              .then(res => res.json())
-                                                                                                                                                                                                                                                                                                                                                                                                                                    .then(data => {
-                                                                                                                                                                                                                                                                                                                                                                                                                                            if (data.success) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      document.getElementById('robux').innerText = data.robux;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                alert('Retrait demandé ! Vérifie ton don sur Please Donate.');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  alert('Erreur: ' + data.error);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </html>
+                                                                      <script src="js/auth.js"></script>
+                                                                      <script src="js/ui.js"></script>
+                                                                      </body>
+                                                                      </html>
