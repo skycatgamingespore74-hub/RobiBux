@@ -31,7 +31,7 @@ if (document.getElementById("protection")) {
 
                                                                               // Ouvrir BitLab
                                                                               function openBitlab() {
-                                                                                  window.location.href = "https://bitlabs.ironsrc.com/offerwall?token=a51b41f7-b0bb-4f53-9be5-f2229db51e6d&uid=" + localStorage.getItem("robibux_user");
+                                                                                  window.location.href = "https://web.bitlabs.ai/?token=a51b41f7-b0bb-4f53-9be5-f2229db51e6d" + localStorage.getItem("robibux_user");
                                                                                   }
 
                                                                                   // FAUX live-feed (visuel)
