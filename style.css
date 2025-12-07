@@ -1,0 +1,39 @@
+body {
+      background: #0a0a0f;
+        color: white;
+          font-family: Arial;
+            text-align: center;
+            }
+
+            .logo {
+              width: 120px;
+                margin-top: 20px;
+                }
+
+                h1 {
+                  font-size: 40px;
+                    background: linear-gradient(45deg, #4b6bff, #9d4bff);
+                      -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        }
+
+                        button {
+                          padding: 15px 25px;
+                            border: none;
+                              border-radius: 10px;
+                                font-size: 20px;
+                                  cursor: pointer;
+                                    background: linear-gradient(45deg, #3a3aff, #8c2aff);
+                                      color: white;
+                                        margin-top: 20px;
+                                        }
+
+                                        #live-feed {
+                                          width: 80%;
+                                            margin: auto;
+                                              margin-top: 40px;
+                                                background: rgba(255,255,255,0.05);
+                                                  padding: 20px;
+                                                    border-radius: 10px;
+                                                    }
