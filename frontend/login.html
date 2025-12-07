@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+        <title>Connexion – Robibux</title>
+            <link rel="stylesheet" href="styles.css">
+                <script defer src="script.js"></script>
+                </head>
+                <body>
+
+                <header>
+                    <h1>Robibux</h1>
+                    </header>
+
+                    <section class="hero">
+                        <h2>Connexion</h2>
+                            <p>Entre ton ID Roblox pour accéder à tes récompenses.</p>
+
+                                <input id="robloxId" type="text" placeholder="Ton ID Roblox"
+                                           style="padding:12px;border-radius:8px;border:none;width:250px;font-size:16px;">
+                                               <br><br>
+
+                                                   <button class="btn" onclick="login()">Se connecter</button>
+
+                                                       <p id="error" style="color:#ff4a7d;margin-top:20px;"></p>
+                                                       </section>
+
+                                                       <script>
+                                                       async function login() {
+                                                           const id = document.getElementById("robloxId").value;
+
+                                                               if (!id) {
+                                                                       document.getElementById("error").innerHTML = "Tu dois entrer ton ID.";
+                                                                               return;
+                                                                                   }
+
+                                                                                       const res = await fetch("https://ton-backend.replit.app/login", {
+                                                                                               method: "POST",
+                                                                                                       credentials: "include",
+                                                                                                               headers: { "Content-Type": "application/json" },
+                                                                                                                       body: JSON.stringify({ robloxId: id })
+                                                                                                                           });
+
+                                                                                                                               const data = await res.json();
+
+                                                                                                                                   if (data.success) {
+                                                                                                                                           window.location = "partners.html";
+                                                                                                                                               } else {
+                                                                                                                                                       document.getElementById("error").innerHTML = "Erreur : " + data.error;
+                                                                                                                                                           }
+                                                                                                                                                           }
+                                                                                                                                                           </script>
+
+                                                                                                                                                           </body>
+                                                                                                                                                           </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+        <title>BitLab – Robibux</title>
+            <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+
+            <header>
+                <h1>Robibux</h1>
+                    <button onclick="window.location='partners.html'">Retour</button>
+                    </header>
+
+                    <section class="hero">
+                        <h2>BitLab</h2>
+                            <p>Complète les quêtes et gagne des Robux.</p>
+
+                                <iframe 
+                                        src="https://bitlab.gg/offerwall?uid=123"
+                                                style="width:90%;height:600px;border:none;border-radius:15px;">
+                                                    </iframe>
+                                                    </section>
+
+                                                    <script>
+                                                    async function protect() {
+                                                        const r = await fetch("https://ton-backend.replit.app/partner/check", { credentials:"include" });
+                                                            if (r.status === 401) window.location = "login.html";
+                                                            }
+                                                            protect();
+                                                            </script>
+
+                                                            </body>
+                                                            </html>
