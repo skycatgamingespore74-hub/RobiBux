@@ -3,40 +3,85 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MoonRewards — Connexion</title>
-<link rel="stylesheet" href="css/main.css">
+<title>Robibux — Gagne des Robux</title>
+<link rel="stylesheet" href="css/global.css">
 </head>
 <body>
-<header class="header">
-  <div class="logo">MoonRewards</div>
-  </header>
+<header class="site-header">
+  <div class="left">
+      <div class="logo">Robibux</div>
+        </div>
+          <div class="right">
+              <nav class="top-partners">
+                    <img src="assets/images/bitlab-logo.png" alt="BitLab" class="partner-small">
+                        </nav>
+                            <button id="openLoginBtn" class="btn neon">Commencer à gagner</button>
+                              </div>
+                              </header>
 
-  <main class="container center">
-    <h1>Gagne des points — connecte-toi</h1>
-      <p>Entre ton <strong>ID Roblox</strong> pour commencer.</p>
-        <button id="openLogin" class="btn">Se connecter (ID)</button>
+                              <main class="hero">
+                                <div class="hero-inner">
+                                    <h1>Gagne des <span class="accent-green">Robux</span> avec des <span class="accent-blue">Tâches Faciles</span></h1>
+                                        <p class="lead">Regarde des vidéos, réponds à des sondages et complète des offres pour gagner des points échangeables.</p>
+                                            <div class="cta-row">
+                                                  <button id="openLoginBtn2" class="btn primary">Gagner maintenant</button>
+                                                        <a href="partners.html" class="btn outline">Voir les partenaires</a>
+                                                            </div>
+                                                                <ul class="features">
+                                                                      <li><strong>Lier votre compte:</strong> Juste ton ID Roblox (aucun mot de passe demandé).</li>
+                                                                            <li><strong>Effectuer des offres:</strong> Sondages & offres partenaires (BitLab, ...).</li>
+                                                                                  <li><strong>Retirer:</strong> Retire tes points (simulation sur GitHub Pages).</li>
+                                                                                      </ul>
+                                                                                        </div>
+                                                                                          <div class="hero-illustration">
+                                                                                              <div class="illustration-box">💰</div>
+                                                                                                </div>
+                                                                                                </main>
 
-          <div id="loginModal" class="modal hidden">
-              <div class="modal-card">
-                    <h3>Connexion — Entre ton ID Roblox</h3>
-                          <input id="robloxId" placeholder="Ex : 12345678" />
-                                <div class="row">
-                                        <button id="loginBtn" class="btn primary">Valider</button>
-                                                <button id="closeLogin" class="btn">Annuler</button>
-                                                      </div>
-                                                            <p class="muted">Ton ID est stocké localement (localStorage).</p>
-                                                                </div>
-                                                                  </div>
+                                                                                                <section class="info-grid container">
+                                                                                                  <div class="card">
+                                                                                                      <h3>Comment ça marche</h3>
+                                                                                                          <ol>
+                                                                                                                <li>Lier ton compte (ID Roblox).</li>
+                                                                                                                      <li>Faire des offres & sondages.</li>
+                                                                                                                            <li>Retirer les points sur ton profil.</li>
+                                                                                                                                </ol>
+                                                                                                                                  </div>
+                                                                                                                                    <div class="card">
+                                                                                                                                        <h3>Nos réseaux</h3>
+                                                                                                                                            <div class="socials">
+                                                                                                                                                  <a class="social yt">YouTube</a>
+                                                                                                                                                        <a class="social dc">Discord</a>
+                                                                                                                                                              <a class="social ig">Instagram</a>
+                                                                                                                                                                  </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                      <div class="card">
+                                                                                                                                                                          <h3>FAQ rapide</h3>
+                                                                                                                                                                              <p>Non, on ne demande jamais le mot de passe Roblox.</p>
+                                                                                                                                                                                </div>
+                                                                                                                                                                                </section>
 
-                                                                    <p class="muted small">Tu peux visiter la page Partenaires pour lancer des quêtes.</p>
-                                                                      <a href="partners.html" class="link">Voir les partenaires →</a>
-                                                                      
-                                                                      <!-- Placeholder pour BitLab iframe (si utilisé) -->
-                                                                      <div id="bitlabMsg" class="muted small" style="margin-top:20px;"></div>
-                                                                      <iframe id="bitlabFrame" style="display:none;width:100%;height:600px;border:none;border-radius:8px;" sandbox="allow-same-origin allow-scripts"></iframe>
-                                                                      </main>
+                                                                                                                                                                                <!-- LOGIN POPUP -->
+                                                                                                                                                                                <div id="loginModal" class="modal hidden">
+                                                                                                                                                                                  <div class="modal-card">
+                                                                                                                                                                                      <button id="closeModal" class="close">✕</button>
+                                                                                                                                                                                          <h3>Lier votre compte Roblox</h3>
+                                                                                                                                                                                              <label>ID Roblox (ex: skycatgaming74)</label>
+                                                                                                                                                                                                  <input id="robloxIdInput" placeholder="Entrez votre ID Roblox" />
+                                                                                                                                                                                                      <div class="row">
+                                                                                                                                                                                                            <button id="submitLogin" class="btn primary">Connexion</button>
+                                                                                                                                                                                                                  <button id="cancelLogin" class="btn">Fermer</button>
+                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                          <p class="muted">Nous ne demandons jamais votre mot de passe.</p>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            </div>
 
-                                                                      <script src="js/auth.js"></script>
-                                                                      <script src="js/ui.js"></script>
-                                                                      </body>
-                                                                      </html>
+                                                                                                                                                                                                                            <footer class="site-footer">
+                                                                                                                                                                                                                              <div>© Robibux • Tous droits réservés</div>
+                                                                                                                                                                                                                                <div class="muted">Terms • Privacy</div>
+                                                                                                                                                                                                                                </footer>
+
+                                                                                                                                                                                                                                <script src="js/login.js"></script>
+                                                                                                                                                                                                                                <script src="js/main.js"></script>
+                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                </html>
